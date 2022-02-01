@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Weather</title>
+</head>
+<body>
+  <div class="tabs">
+    <div class="tab">
+      <form class="input">
+        <input type="text" placeholder="Enter the name of the city" class="field">
+        <input type="submit" class="btn" value="🔍">
+      </form>
+      <div class="pages">
+        <div class="info now active-page">
+          <p class="temperature">
+            <span class="temperature--number">0</span>
+            <span class="circle"><img src="icons/circleBig.png" alt=""></span>
+          </p>
+          <span class="cloud"><img class="icon--weather" src="icons/cloud.png"></span>
+          <p class="current-city--bottom">undefined</p>
+          <span class="hearth"><img src="icons/hearth.png" alt=""></span>
+        </div>
+        <div class="info details ">
+          <p class="current-city--top">undefined</p>
+          <div class="info-weather">
+            <p>
+              Temperature: <b class="temperature-info">0</b>
+              <span class="circle-small">
+                <img src="icons/circleSmall.png">
+              </span>
+            </p>
+            <p>
+              Feels like: <b class="feels-info">0</b>
+              <span class="circle-small">
+                <img src="icons/circleSmall.png">
+              </span>
+            </p>
+            <p>
+              Weather: <b class="weather-info">undefined</b>
+            </p>
+            <p>
+              Sunrise: <b class="sunrise-info">00:00</b>
+            </p>
+            <p>
+              Sunset: <b class="sunset-info">00:00</b>
+            </p>
+          </div>
+        </div>
+        <div class="info forecast ">
+          <p class="current-city--top">undefined</p>
+          <div class="forecast-wrapper">
+          </div>
+        </div>
+        <div class="switch">
+          <button class="toggle active">Now</button>
+          <button class="toggle">Details</button>
+          <button class="toggle">Forecast</button>
+        </div>
+        <div class="locations">
+          <p class="title-locations">Added Locations:</p>
+          <div class="cities">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
