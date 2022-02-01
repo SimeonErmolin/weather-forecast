@@ -1,6 +1,6 @@
 export const URL = {
-  SERVER_URL: 'http://api.openweathermap.org/data/2.5/weather',
-  SERVER_URL_FORECAST: 'http://api.openweathermap.org/data/2.5/forecast',
+  SERVER_URL: 'https://api.openweathermap.org/data/2.5/weather',
+  SERVER_URL_FORECAST: 'https://api.openweathermap.org/data/2.5/forecast',
   API_KEY: '802cf9d5becc97345a7802bf678bddeb&units=metric',
 }
 export const PAGE = {
