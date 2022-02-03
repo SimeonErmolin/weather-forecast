@@ -135,7 +135,6 @@ function favoriteCitiesHandler() {
   const btnDelete = document.querySelectorAll(".btnDelete");
   const cityName = document.querySelectorAll(".city--name");
 
-  // удалить из избранного
   // перебираю массив рекурсией, для тренироовки
   function addEvent(arr, i) {
     if (arr.length != 0) {
@@ -154,7 +153,6 @@ function favoriteCitiesHandler() {
     updateLocal();
   }
 
-  // по клику добавляю в NOW
   cityName.forEach(function (item, index) {
     item.addEventListener('click', () => pushCity(index));
   })
@@ -166,7 +164,6 @@ function favoriteCitiesHandler() {
 
 favoriteCitiesHandler();
 
-// создаю щаблон города и добавляю в HTML
 NOW.BTN_HEARTH.addEventListener('click', addCity);
 function addCity() {
   if (!favoriteCities.has(NOW.CURRENT_CITY_BOTTOM.textContent)) {
