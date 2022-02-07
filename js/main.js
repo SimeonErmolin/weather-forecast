@@ -1,6 +1,6 @@
-import { favoriteCities, updateLocal, saveCurrentCity } from './js/storage.js'
-let { URL, PAGE, NOW, DETAILS, FORECAST } = await import('./js/view.js');
-let { tabs } = await import('./js/tabs.js');
+import { favoriteCities, updateLocal, saveCurrentCity } from './storage.js'
+let { URL, PAGE, NOW, DETAILS, FORECAST } = await import('./view.js');
+let { tabs } = await import('./tabs.js');
 tabs();
 
 if (localStorage.getItem('currentCity')) {
