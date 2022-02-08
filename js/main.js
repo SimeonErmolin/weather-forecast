@@ -111,21 +111,32 @@ PAGE.BTN.addEventListener('click', () => {
   detectedCity(PAGE.FIELD.value);
 })
 
+class cityNotFoundError extends Error {
+  constructor(message) {
+    super(message)
+    this.name = "cityNotFoundError";
+  }
+}
+
 async function detectedCity(cityName) {
   try {
     const url = server_url => `${server_url}?q=${cityName}&appid=${URL.API_KEY}`;
-    let response = await fetch(url(URL.SERVER_URL));
-    let data = await response.json();
+    const response = await fetch(url(URL.SERVER_URL));
+    const data = await response.json();
+
+    if (data.cod == 404) {
+      throw new cityNotFoundError("There was no such city!");
+    }
     render(data);
 
-    let responseForecast = await fetch(url(URL.SERVER_URL_FORECAST));
-    let dataForecast = await responseForecast.json();
+    const responseForecast = await fetch(url(URL.SERVER_URL_FORECAST));
+    const dataForecast = await responseForecast.json();
     renderForecast(dataForecast);
   } catch(error) {
-    if (error.message == "Cannot read properties of undefined (reading 'temp')") {
-      alert('There was no such city!');
+    if (error instanceof cityNotFoundError) {
+      alert(error.message)
     } else {
-      alert(error);
+      alert(error)
     }
   }
 }
